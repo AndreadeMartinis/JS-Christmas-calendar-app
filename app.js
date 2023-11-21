@@ -58,11 +58,12 @@ function openImage(dayBoxElement, day) {
     // Ottieni l'URL dell'immagine corrispondente al giorno
     const imageUrl = imageUrls[day - 1];
 
-    // Mostriamo l'immagine nel popup
+    // Mostra l'immagine nel popup
     const popupImage = document.querySelector(".popupImage");
     popupImage.src = imageUrl;
     popupImage.alt = `Offerta del giorno ${day} Dicembre`;
 
+    // Aggiunge una descrizione all'immagine
     const infoPromo = document.createElement("p");
     infoPromo.textContent = `Offerta del ${day} dicembre`;
     popupImage.insertAdjacentElement("afterend", infoPromo);
@@ -71,16 +72,18 @@ function openImage(dayBoxElement, day) {
     const overlay = document.querySelector(".overlay");
     overlay.style.display = "flex";
 
-    // Chiudi l'overlay al clic sull'overlay
+    // Chiude l'overlay al clic sull'overlay
     overlay.addEventListener("click", () => {
       overlay.style.display = "none";
       // Assegna l'immagine come sfondo della casella
       dayBoxElement.style.backgroundImage = `url(${imageUrl})`;
+
       infoPromo.textContent = "";
+      dayBoxElement.textContent = "";
+
       dayBoxElement.classList.add("dayBoxEl-open");
       dayBoxElement.classList.remove("dayBoxEl-today");
     });
-    dayBoxElement.textContent = "";
   }
   if (day > today) {
     const alertEl = document.createElement("span");
@@ -121,9 +124,7 @@ window.addEventListener("DOMContentLoaded", createCalendar);
 /* 
 TODO:
 
-- I giorni passati mostrano caselle già aperte e cliccabili, in bianco e nero
-- I giorni futuri sono bloccati e al click esce un messaggio tipo span
 - Al caricamento mandare un popup di auguri che si chiude e mostra il calendario
-- Mettere nella cache se i passati sono aperti oppure no
+
 
 */
