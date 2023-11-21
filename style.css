@@ -23,6 +23,11 @@ font-weight: 400;
 body {
   font-family: "Glass Antiqua", cursive;
   font-weight: 400;
+  background-image: url("src/img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  backdrop-filter: brightness(0.7) blur(2px);
 }
 
 /* -------------------- HEADER -------------------- */
@@ -31,16 +36,16 @@ header {
   height: 7dvh;
 
   background-color: transparent;
-  color: rgba(165, 10, 10, 0.916);
+  /* color: rgba(165, 10, 10, 0.916); */
+  color: white;
   text-align: center;
   font-size: 22px;
-  font-weight: bold;
   padding-top: 15px;
 }
 
 h1 {
   display: inline;
-  font-size: 22px;
+  font-size: 24px;
   z-index: 1;
 }
 
@@ -72,31 +77,19 @@ main {
 }
 
 main h2 {
-  font-size: 15px;
-  color: darkgreen;
-  font-weight: 400;
-}
-
-main p {
-  font-size: 15px;
-  color: darkgreen;
+  font-size: 20px;
+  color: rgb(81, 171, 81);
+  font-weight: bold;
 }
 
 .dateMessage {
-  font-size: 10px;
+  font-size: 15px;
+  color: rgb(81, 171, 81);
   text-align: end;
   font-style: italic;
+  font-weight: bold;
   padding-bottom: 5px;
-  animation: scrollText 9s linear infinite;
-}
-
-@keyframes scrollText {
-  from {
-    transform: translateX(250%);
-  }
-  to {
-    transform: translateX(-250%);
-  }
+  animation: scrollText 10s linear infinite;
 }
 
 .calendar {
@@ -219,9 +212,10 @@ footer {
   align-items: center;
   height: 6dvh;
 
-  background-color: rgb(165, 10, 10);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(138, 10, 10);
   letter-spacing: 1.8px;
+  font-weight: bold;
   font-size: 10px;
   padding: 3px;
 }
@@ -231,7 +225,7 @@ footer i {
 }
 
 footer a {
-  color: white;
+  color: inherit;
 }
 footer .container-left {
   text-align: start;
@@ -294,5 +288,14 @@ footer .container-right span {
   }
   100% {
     box-shadow: 0 0 5px rgb(248, 235, 224);
+  }
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(250%);
+  }
+  to {
+    transform: translateX(-250%);
   }
 }

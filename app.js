@@ -6,7 +6,7 @@ const imageUrls = Array.from(
 
 //const today = new Date().getDate();
 // Data odierna
-const today = 16;
+const today = 12;
 
 // Funzione per creare il calendario
 function createCalendar() {
@@ -91,7 +91,7 @@ function openInfoPanel() {
 function writeDateMessage() {
   const messageEl = document.querySelector(".dateMessage");
   //prettier-ignore
-  messageEl.textContent = `Oggi è ${today} Dicembre, mancano ${25 - today} giorni a Natale!`;
+  messageEl.textContent = `Oggi è ${today} Dicembre, mancano ${25 - today} giorni a Natale!!!`;
 }
 
 const infoIcon = document.querySelector(".fa-candy-cane");
