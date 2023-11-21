@@ -84,7 +84,7 @@ header img {
   width: 65px;
   height: 65px;
   position: absolute;
-  top: 28px;
+  bottom: 35px;
   right: 40%;
   z-index: 100;
 }
