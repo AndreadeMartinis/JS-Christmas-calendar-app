@@ -122,7 +122,6 @@ main p {
 
 .dayBoxEl-today {
   animation: growAndShrinkBox 5s ease-in-out infinite;
-  box-shadow: 0 0 5px rgb(253, 121, 85);
 }
 
 .alertEl {
@@ -231,7 +230,7 @@ footer .container-right span {
 
 @keyframes growAndShrinkBox {
   0% {
-    box-shadow: 0 0 5px rgb(253, 121, 85);
+    box-shadow: 0 0 5px rgb(248, 235, 224);
   }
   25% {
     box-shadow: 0 0 7.5px rgb(253, 121, 85);
@@ -243,6 +242,6 @@ footer .container-right span {
     box-shadow: 0 0 7.5px rgb(253, 121, 85);
   }
   100% {
-    box-shadow: 0 0 5px rgb(253, 121, 85);
+    box-shadow: 0 0 5px rgb(248, 235, 224);
   }
 }
