@@ -53,7 +53,7 @@ function createCalendar() {
 }
 
 // Funzione per aprire l'immagine come popup
-function openImage(dayBoxElement, day) {
+function openImage(dayBoxEl, day) {
   if (day <= today) {
     // Ottieni l'URL dell'immagine corrispondente al giorno
     const imageUrl = imageUrls[day - 1];
@@ -76,24 +76,24 @@ function openImage(dayBoxElement, day) {
     overlay.addEventListener("click", () => {
       overlay.style.display = "none";
       // Assegna l'immagine come sfondo della casella
-      dayBoxElement.style.backgroundImage = `url(${imageUrl})`;
+      dayBoxEl.style.backgroundImage = `url(${imageUrl})`;
 
       infoPromo.textContent = "";
-      dayBoxElement.textContent = "";
+      dayBoxEl.textContent = "";
 
-      dayBoxElement.classList.add("dayBoxEl-open");
-      dayBoxElement.classList.remove("dayBoxEl-today");
+      dayBoxEl.classList.add("dayBoxEl-open");
+      dayBoxEl.classList.remove("dayBoxEl-today");
     });
   }
   if (day > today) {
     const alertEl = document.createElement("span");
     alertEl.classList.add("alertEl");
     alertEl.textContent = "Ogni giorno una sorpresa diversa!";
-    dayBoxElement.appendChild(alertEl);
+    dayBoxEl.appendChild(alertEl);
     setTimeout(() => {
       alertEl.classList.add("fade-out");
       setTimeout(() => {
-        dayBoxElement.removeChild(alertEl);
+        dayBoxEl.removeChild(alertEl);
       }, 600);
     }, 1200);
   }
