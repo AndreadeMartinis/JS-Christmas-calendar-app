@@ -38,12 +38,12 @@ header {
   color: rgba(165, 10, 10, 0.916);
   text-align: center;
   font-weight: bold;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 h1 {
   display: inline;
-  font-size: 24px;
+  font-size: 23px;
   z-index: 1;
 }
 
@@ -76,13 +76,13 @@ main {
 }
 
 main h2 {
-  font-size: 18px;
+  font-size: 17px;
   color: darkgreen;
   font-weight: 400;
 }
 
 .dateMessage {
-  font-size: 14px;
+  font-size: 13px;
   text-align: end;
   font-style: italic;
   padding-bottom: 5px;
