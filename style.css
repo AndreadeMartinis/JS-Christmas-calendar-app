@@ -52,6 +52,7 @@ footer {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90dvh;
@@ -115,6 +116,11 @@ footer .container-right {
 footer .container-right span {
   display: flex;
   justify-content: space-evenly;
+}
+
+main p {
+  font-size: 18px;
+  color: darkgreen;
 }
 
 .calendar {
