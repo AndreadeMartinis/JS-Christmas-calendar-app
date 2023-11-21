@@ -121,7 +121,7 @@ main p {
 }
 
 .dayBoxEl-today {
-  animation: growAndShrinkBox 5s ease-in-out infinite;
+  animation: growAndShrinkBox 3s ease-in-out infinite;
 }
 
 .alertEl {
@@ -232,13 +232,25 @@ footer .container-right span {
   0% {
     box-shadow: 0 0 5px rgb(248, 235, 224);
   }
-  25% {
+  12.5% {
     box-shadow: 0 0 7.5px rgb(207, 191, 142);
   }
+  25% {
+    box-shadow: 0 0 10px rgb(207, 191, 142);
+  }
+  37.5% {
+    box-shadow: 0 0 12.5px rgb(224, 193, 99);
+  }
   50% {
-    box-shadow: 0 0 10px rgb(224, 193, 99);
+    box-shadow: 0 0 15px rgb(224, 193, 99);
+  }
+  62.5% {
+    box-shadow: 0 0 12.5px rgb(224, 193, 99);
   }
   75% {
+    box-shadow: 0 0 10px rgb(207, 191, 142);
+  }
+  87.5% {
     box-shadow: 0 0 7.5px rgb(207, 191, 142);
   }
   100% {
