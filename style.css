@@ -24,9 +24,9 @@ body {
   font-family: "Glass Antiqua", cursive;
   font-weight: 400;
 
-  background-image: url(src/img/background.png);
+  /* background-image: url(src/img/background.png);
   background-size: cover;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
 }
 
 /* -------------------- HEADER -------------------- */
