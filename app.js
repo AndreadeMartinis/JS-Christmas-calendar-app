@@ -44,6 +44,9 @@ function createCalendar() {
       dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`;
       dayBoxEl.classList.add("dayBoxEl-open");
     }
+    if (day === today) {
+      dayBoxEl.classList.add("dayBoxEl-today");
+    }
     dayBoxEl.addEventListener("click", () => openImage(dayBoxEl, day));
     calendar.appendChild(dayBoxEl);
   }
@@ -75,6 +78,7 @@ function openImage(dayBoxElement, day) {
       dayBoxElement.style.backgroundImage = `url(${imageUrl})`;
       infoPromo.textContent = "";
       dayBoxElement.classList.add("dayBoxEl-open");
+      dayBoxElement.classList.remove("dayBoxEl-today");
     });
     dayBoxElement.textContent = "";
   }

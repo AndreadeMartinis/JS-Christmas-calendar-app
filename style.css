@@ -55,7 +55,7 @@ h1 {
 
 .infoIcon i {
   font-size: 14px;
-  animation: growAndShrink 3s ease-in-out 5;
+  animation: growAndShrinkIcon 3s ease-in-out 5;
   animation-delay: 5s;
 }
 
@@ -117,6 +117,10 @@ main p {
   background-color: rgb(254, 229, 196);
 }
 
+.dayBoxEl-today {
+  animation: growAndShrinkBox 2s ease-in-out 5;
+}
+
 .alertEl {
   font-size: 11px;
   position: absolute;
@@ -170,12 +174,24 @@ main p {
   transition: opacity 0.5s ease-out; /* Puoi regolare la durata e la funzione di transizione a tuo piacimento */
 }
 
-@keyframes growAndShrink {
+@keyframes growAndShrinkIcon {
   0% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes growAndShrinkBox {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
