@@ -98,6 +98,10 @@ header img {
 footer i {
   font-size: 14px;
 }
+
+footer a {
+  color: white;
+}
 footer .container-left {
   text-align: start;
 }
