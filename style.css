@@ -27,7 +27,7 @@ body {
   font-weight: 400;
 }
 header {
-  height: 3vh;
+  height: 3dvh;
 
   background-color: transparent;
   color: rgba(165, 10, 10, 0.916);
@@ -39,7 +39,7 @@ header {
 footer {
   display: flex;
   justify-content: space-between;
-  height: 7vh;
+  height: 7dvh;
 
   background-color: rgb(165, 10, 10);
   color: white;
@@ -54,7 +54,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 89vh;
+  height: 90dvh;
 }
 
 header i {
