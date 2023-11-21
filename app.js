@@ -58,6 +58,7 @@ function openImage(dayBoxElement, day) {
     // Mostriamo l'immagine nel popup
     const popupImage = document.querySelector(".popupImage");
     popupImage.src = imageUrl;
+    popupImage.alt = `Offerta del giorno ${day} Dicembre`;
 
     const infoPromo = document.createElement("p");
     infoPromo.textContent = `Offerta del ${day} dicembre`;
@@ -84,9 +85,31 @@ function openImage(dayBoxElement, day) {
     dayBoxElement.appendChild(alertEl);
     setTimeout(() => {
       alertEl.classList.add("fade-out");
+      setTimeout(() => {
+        dayBoxElement.removeChild(alertEl);
+      }, 600);
     }, 1200);
   }
 }
+
+function openInfoPanel() {
+  const popupImage = document.querySelector(".popupImage");
+  popupImage.src = "src/img/infoPromo.png";
+  popupImage.alt = "Info Evento";
+
+  // Mostra l'overlay
+  const overlay = document.querySelector(".overlay");
+  overlay.style.display = "flex";
+
+  // Chiudi l'overlay al clic sull'overlay
+  overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+}
+
+const infoIcon = document.querySelector(".fa-candy-cane");
+
+infoIcon.addEventListener("click", openInfoPanel);
 
 // Chiama la funzione per creare il calendario quando la pagina è caricata
 window.addEventListener("DOMContentLoaded", createCalendar);
