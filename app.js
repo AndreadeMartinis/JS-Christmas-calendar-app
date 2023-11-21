@@ -90,7 +90,8 @@ function openInfoPanel() {
 
 function writeDateMessage() {
   const messageEl = document.querySelector(".dateMessage");
-  messageEl.textContent = `Oggi è ${today} Dicembre, -${24 - today} a Natale!`;
+  //prettier-ignore
+  messageEl.textContent = `Oggi è ${today} Dicembre, mancano ${25 - today} giorni a Natale!`;
 }
 
 const infoIcon = document.querySelector(".fa-candy-cane");
