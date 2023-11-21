@@ -52,6 +52,7 @@ h1 {
   top: 6px;
   left: 8px;
   cursor: pointer;
+  overflow: visible;
 }
 
 .infoIcon i {
