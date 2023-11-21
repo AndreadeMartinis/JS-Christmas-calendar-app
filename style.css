@@ -26,42 +26,24 @@ body {
   font-family: "Glass Antiqua";
   font-weight: 400;
 }
+
+/* -------------------- HEADER -------------------- */
+
 header {
-  height: 3dvh;
+  height: 7dvh;
 
   background-color: transparent;
   color: rgba(165, 10, 10, 0.916);
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-  margin-top: 5px;
+  padding-top: 15px;
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 6dvh;
-
-  background-color: rgb(165, 10, 10);
-  color: white;
-  letter-spacing: 1.8px;
-  font-size: 10px;
-  padding: 3px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 90dvh;
-}
-
-header i {
-  font-size: 14px;
-  animation: growAndShrink 3s ease-in-out 5;
-  animation-delay: 5s;
+h1 {
+  display: inline;
+  font-size: 22px;
+  z-index: 1;
 }
 
 .infoIcon {
@@ -71,40 +53,28 @@ header i {
   cursor: pointer;
 }
 
+.infoIcon i {
+  font-size: 14px;
+  animation: growAndShrink 3s ease-in-out 5;
+  animation-delay: 5s;
+}
+
 .infoIcon p {
   font-size: 10px;
 }
 
-h1 {
-  display: inline;
-  font-size: 22px;
-  z-index: 1;
-}
+/* -------------------- MAIN -------------------- */
 
-footer i {
-  font-size: 14px;
-}
-
-footer a {
-  color: white;
-}
-footer .container-left {
-  text-align: start;
-}
-footer .container-right {
-  text-align: end;
+main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 90%;
-}
-footer .container-right span {
-  display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  height: 85dvh;
 }
 
 main p {
-  font-size: 16px;
+  font-size: 15px;
   color: darkgreen;
 }
 
@@ -210,4 +180,41 @@ main img {
   100% {
     transform: scale(1);
   }
+}
+
+/* -------------------- FOOTER -------------------- */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6dvh;
+
+  background-color: rgb(165, 10, 10);
+  color: white;
+  letter-spacing: 1.8px;
+  font-size: 10px;
+  padding: 3px;
+}
+
+footer i {
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+}
+footer .container-left {
+  text-align: start;
+}
+footer .container-right {
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90%;
+}
+footer .container-right span {
+  display: flex;
+  justify-content: space-evenly;
 }
