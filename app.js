@@ -1,32 +1,11 @@
 // Array di URL delle immagini
-const imageUrls = [
-  "src/img/1_dayPromo.png",
-  "src/img/2_dayPromo.png",
-  "src/img/3_dayPromo.png",
-  "src/img/4_dayPromo.png",
-  "src/img/5_dayPromo.png",
-  "src/img/6_dayPromo.png",
-  "src/img/7_dayPromo.png",
-  "src/img/8_dayPromo.png",
-  "src/img/9_dayPromo.png",
-  "src/img/10_dayPromo.png",
-  "src/img/11_dayPromo.png",
-  "src/img/12_dayPromo.png",
-  "src/img/13_dayPromo.png",
-  "src/img/14_dayPromo.png",
-  "src/img/15_dayPromo.png",
-  "src/img/16_dayPromo.png",
-  "src/img/17_dayPromo.png",
-  "src/img/18_dayPromo.png",
-  "src/img/19_dayPromo.png",
-  "src/img/20_dayPromo.png",
-  "src/img/21_dayPromo.png",
-  "src/img/22_dayPromo.png",
-  "src/img/23_dayPromo.png",
-  "src/img/24_dayPromo.png",
-];
+const imageUrls = Array.from(
+  { length: 24 },
+  (_, index) => `src/img/${index + 1}_dayPromo.png`
+);
 
 //const today = new Date().getDate();
+// Data odierna
 const today = 16;
 
 // Funzione per creare il calendario
@@ -37,63 +16,60 @@ function createCalendar() {
     const dayBoxEl = document.createElement("div");
     dayBoxEl.classList.add("dayBoxEl");
 
-    if (day >= today) {
+    if (day > today) {
       dayBoxEl.textContent = day;
-    }
-    if (day < today) {
+    } else if (day < today) {
+      const expiredOverflow = document.createElement("span");
+      expiredOverflow.classList.add("expiredOffer");
+      dayBoxEl.appendChild(expiredOverflow);
       dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`;
       dayBoxEl.classList.add("dayBoxEl-open");
-    }
-    if (day === today) {
+    } else {
+      dayBoxEl.textContent = day;
       dayBoxEl.classList.add("dayBoxEl-today");
     }
+
     dayBoxEl.addEventListener("click", () => openImage(dayBoxEl, day));
     calendar.appendChild(dayBoxEl);
   }
+  writeDateMessage();
 }
 
 // Funzione per aprire l'immagine come popup
 function openImage(dayBoxEl, day) {
   if (day <= today) {
-    // Ottieni l'URL dell'immagine corrispondente al giorno
     const imageUrl = imageUrls[day - 1];
 
-    // Mostra l'immagine nel popup
     const popupImage = document.querySelector(".popupImage");
     popupImage.src = imageUrl;
     popupImage.alt = `Offerta del giorno ${day} Dicembre`;
 
-    // Aggiunge una descrizione all'immagine
     const infoPromo = document.createElement("p");
-    infoPromo.textContent = `Offerta del ${day} dicembre`;
+    infoPromo.textContent = `L'offerta del ${day} dicembre purtroppo è scaduta!`;
+    if (day === today)
+      infoPromo.innerHTML = `Offerta del giorno! <br> Corri da noi, ti stiamo aspettando!`;
     popupImage.insertAdjacentElement("afterend", infoPromo);
 
-    // Mostra l'overlay
     const overlay = document.querySelector(".overlay");
     overlay.style.display = "flex";
 
-    // Chiude l'overlay al clic sull'overlay
     overlay.addEventListener("click", () => {
       overlay.style.display = "none";
-      // Assegna l'immagine come sfondo della casella
       dayBoxEl.style.backgroundImage = `url(${imageUrl})`;
-
       infoPromo.textContent = "";
-      dayBoxEl.textContent = "";
-
+      if (day === today) dayBoxEl.textContent = "";
       dayBoxEl.classList.add("dayBoxEl-open");
       dayBoxEl.classList.remove("dayBoxEl-today");
     });
-  }
-  if (day > today) {
-    const alertEl = document.createElement("span");
-    alertEl.classList.add("alertEl");
-    alertEl.textContent = "Ogni giorno una sorpresa diversa!";
-    dayBoxEl.appendChild(alertEl);
+  } else {
+    const futureOfferOverflow = document.createElement("span");
+    futureOfferOverflow.classList.add("futureOffer");
+    futureOfferOverflow.textContent = "Ogni giorno una sorpresa diversa!";
+    dayBoxEl.appendChild(futureOfferOverflow);
     setTimeout(() => {
-      alertEl.classList.add("fade-out");
+      futureOfferOverflow.classList.add("fade-out");
       setTimeout(() => {
-        dayBoxEl.removeChild(alertEl);
+        dayBoxEl.removeChild(futureOfferOverflow);
       }, 600);
     }, 1200);
   }
@@ -104,21 +80,22 @@ function openInfoPanel() {
   popupImage.src = "src/img/infoPromo.png";
   popupImage.alt = "Info Evento";
 
-  // Mostra l'overlay
   const overlay = document.querySelector(".overlay");
   overlay.style.display = "flex";
 
-  // Chiudi l'overlay al clic sull'overlay
   overlay.addEventListener("click", () => {
     overlay.style.display = "none";
   });
 }
 
-const infoIcon = document.querySelector(".fa-candy-cane");
+function writeDateMessage() {
+  const messageEl = document.querySelector(".dateMessage");
+  messageEl.textContent = `Oggi è ${today} Dicembre, -${24 - today} a Natale!`;
+}
 
+const infoIcon = document.querySelector(".fa-candy-cane");
 infoIcon.addEventListener("click", openInfoPanel);
 
-// Chiama la funzione per creare il calendario quando la pagina è caricata
 window.addEventListener("DOMContentLoaded", createCalendar);
 
 /* 
