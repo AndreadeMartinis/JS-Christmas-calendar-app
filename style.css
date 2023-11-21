@@ -4,6 +4,7 @@
 
 * {
   margin: 0;
+  overflow: hidden;
 }
 
 /* ------------------------------------------------------ */
@@ -84,8 +85,16 @@ main p {
 .dateMessage {
   font-size: 10px;
   text-align: end;
-  width: 100%;
-  font-weight: bold;
+  animation: scrollText 9s linear infinite;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(250%);
+  }
+  to {
+    transform: translateX(-250%);
+  }
 }
 
 .calendar {
