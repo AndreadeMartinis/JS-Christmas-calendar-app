@@ -58,16 +58,24 @@ main {
 
 header i {
   font-size: 14px;
+  animation: growAndShrink 3s ease-in-out 5;
+  animation-delay: 5s;
+}
+
+.infoIcon {
   position: absolute;
   top: 6px;
   left: 8px;
-  animation: growAndShrink 3s ease-in-out 5;
-  animation-delay: 5s;
   cursor: pointer;
 }
 
-header p {
+.infoIcon p {
+  font-size: 11px;
+}
+
+h1 {
   display: inline;
+  font-size: 22px;
 }
 
 footer a {
