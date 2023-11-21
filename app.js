@@ -1,70 +1,102 @@
 // Array di URL delle immagini
 const imageUrls = [
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
-  "https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=png/path/s8bc0749396092fd4/image/ife39e4302520f913/version/1653580461/buono-regalo-estetica.png",
+  "src/img/1_dayPromo.png",
+  "src/img/2_dayPromo.png",
+  "src/img/3_dayPromo.png",
+  "src/img/4_dayPromo.png",
+  "src/img/5_dayPromo.png",
+  "src/img/6_dayPromo.png",
+  "src/img/7_dayPromo.png",
+  "src/img/8_dayPromo.png",
+  "src/img/9_dayPromo.png",
+  "src/img/10_dayPromo.png",
+  "src/img/11_dayPromo.png",
+  "src/img/12_dayPromo.png",
+  "src/img/13_dayPromo.png",
+  "src/img/14_dayPromo.png",
+  "src/img/15_dayPromo.png",
+  "src/img/16_dayPromo.png",
+  "src/img/17_dayPromo.png",
+  "src/img/18_dayPromo.png",
+  "src/img/19_dayPromo.png",
+  "src/img/20_dayPromo.png",
+  "src/img/21_dayPromo.png",
+  "src/img/22_dayPromo.png",
+  "src/img/23_dayPromo.png",
+  "src/img/24_dayPromo.png",
 ];
+
+//const today = new Date().getDate();
+const today = 16;
 
 // Funzione per creare il calendario
 function createCalendar() {
-  const calendar = document.getElementById("calendar");
+  const calendar = document.querySelector(".calendar");
 
-  for (let i = 1; i <= 24; i++) {
-    const day = document.createElement("div");
-    day.classList.add("day");
-    day.textContent = i;
-    day.addEventListener("click", () => openImage(day, i));
-    calendar.appendChild(day);
+  for (let day = 1; day <= 24; day++) {
+    const dayBoxEl = document.createElement("div");
+    dayBoxEl.classList.add("dayBoxEl");
+
+    if (day >= today) {
+      dayBoxEl.textContent = day;
+    }
+    if (day < today) {
+      dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`;
+      dayBoxEl.classList.add("dayBoxEl-open");
+    }
+    dayBoxEl.addEventListener("click", () => openImage(dayBoxEl, day));
+    calendar.appendChild(dayBoxEl);
   }
 }
 
 // Funzione per aprire l'immagine come popup
-function openImage(dayElement, day) {
-  const today = new Date().getDate();
-
-  if (day === today) {
+function openImage(dayBoxElement, day) {
+  if (day <= today) {
     // Ottieni l'URL dell'immagine corrispondente al giorno
     const imageUrl = imageUrls[day - 1];
 
     // Mostriamo l'immagine nel popup
-    const popupImage = document.getElementById("popupImage");
+    const popupImage = document.querySelector(".popupImage");
     popupImage.src = imageUrl;
 
+    const infoPromo = document.createElement("p");
+    infoPromo.textContent = `Offerta del ${day} dicembre`;
+    popupImage.insertAdjacentElement("afterend", infoPromo);
+
     // Mostra l'overlay
-    const overlay = document.getElementById("overlay");
+    const overlay = document.querySelector(".overlay");
     overlay.style.display = "flex";
 
     // Chiudi l'overlay al clic sull'overlay
     overlay.addEventListener("click", () => {
       overlay.style.display = "none";
       // Assegna l'immagine come sfondo della casella
-      dayElement.style.backgroundImage = `url(${imageUrl})`;
+      dayBoxElement.style.backgroundImage = `url(${imageUrl})`;
+      infoPromo.textContent = "";
+      dayBoxElement.classList.add("dayBoxEl-open");
     });
-  } else {
-    alert("Questo regalo non può essere aperto oggi!");
+    dayBoxElement.textContent = "";
+  }
+  if (day > today) {
+    const alertEl = document.createElement("span");
+    alertEl.classList.add("alertEl");
+    alertEl.textContent = "Ogni giorno una sorpresa diversa!";
+    dayBoxElement.appendChild(alertEl);
+    setTimeout(() => {
+      alertEl.classList.add("fade-out");
+    }, 1200);
   }
 }
 
 // Chiama la funzione per creare il calendario quando la pagina è caricata
 window.addEventListener("DOMContentLoaded", createCalendar);
+
+/* 
+TODO:
+
+- I giorni passati mostrano caselle già aperte e cliccabili, in bianco e nero
+- I giorni futuri sono bloccati e al click esce un messaggio tipo span
+- Al caricamento mandare un popup di auguri che si chiude e mostra il calendario
+- Mettere nella cache se i passati sono aperti oppure no
+
+*/

@@ -5,31 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendario dell'Avvento</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Montserrat:wght@100;400;700&family=Mountains+of+Christmas:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/a956cd1624.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="app.js"></script>
   </head>
   <body>
     <header>
+      <i class="fa-solid fa-candy-cane"></i>
       <p>Buon natale da gocce di bellezza</p>
     </header>
     <main>
-      <div class="calendar" id="calendar"></div>
+      <div class="calendar"></div>
       <!-- Popup e overlay -->
-      <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
-          <img id="popupImage" alt="Offerta del giorno" />
-          <p>Contenuto del popup</p>
+      <div class="overlay">
+        <div class="popup">
+          <img class="popupImage" alt="Offerta del giorno" />
         </div>
       </div>
     </main>
     <footer>
-      <p>Buon natale da gocce di bellezza</p>
+      <div class="container-left">
+        <p>Centro Estetico Gocce di Bellezza</p>
+        <p>Viale della Pace, 61</p>
+        <p>64023 Mosciano Sant'Angelo</p>
+      </div>
+      <div class="container-right">
+        <p>Per prenotazioni</p>
+        <a href="tel:3298069678" alt="Prenota al 3298069678">3298069678</a>
+        <a href="tel:3465299199" alt="Prenota al 3465299199">3465299199</a>
+      </div>
     </footer>
   </body>
-  <script src="app.js"></script>
 </html>
