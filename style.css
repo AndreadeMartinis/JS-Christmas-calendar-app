@@ -85,6 +85,8 @@ main p {
 .dateMessage {
   font-size: 10px;
   text-align: end;
+  font-style: italic;
+  padding-bottom: 5px;
   animation: scrollText 9s linear infinite;
 }
 
