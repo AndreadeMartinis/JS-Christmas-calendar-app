@@ -88,6 +88,11 @@ footer .container-left {
 }
 footer .container-right {
   text-align: end;
+  display: flex;
+  flex-direction: column;
+}
+footer .container-right span a {
+  display: inline;
 }
 
 .calendar {
