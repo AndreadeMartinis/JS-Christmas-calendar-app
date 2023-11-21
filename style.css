@@ -233,13 +233,13 @@ footer .container-right span {
     box-shadow: 0 0 5px rgb(248, 235, 224);
   }
   25% {
-    box-shadow: 0 0 7.5px rgb(253, 121, 85);
+    box-shadow: 0 0 7.5px rgb(207, 191, 142);
   }
   50% {
-    box-shadow: 0 0 10px rgb(253, 121, 85);
+    box-shadow: 0 0 10px rgb(224, 193, 99);
   }
   75% {
-    box-shadow: 0 0 7.5px rgb(253, 121, 85);
+    box-shadow: 0 0 7.5px rgb(207, 191, 142);
   }
   100% {
     box-shadow: 0 0 5px rgb(248, 235, 224);
