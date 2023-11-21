@@ -53,7 +53,7 @@ footer {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 90dvh;
 }
@@ -81,21 +81,6 @@ h1 {
   z-index: 1;
 }
 
-header img {
-  width: 65px;
-  height: 65px;
-  position: absolute;
-  bottom: 40px;
-  right: 40%;
-  z-index: 100;
-}
-
-/* footer a {
-  display: block;
-  color: inherit;
-  letter-spacing: 2px;
-} */
-
 footer i {
   font-size: 14px;
 }
@@ -119,7 +104,7 @@ footer .container-right span {
 }
 
 main p {
-  font-size: 18px;
+  font-size: 16px;
   color: darkgreen;
 }
 
@@ -173,6 +158,11 @@ main p {
   display: flex;
   align-items: center;
   text-align: center;
+}
+
+main img {
+  width: 65px;
+  height: 65px;
 }
 
 /* Stile per il popup e overlay */
