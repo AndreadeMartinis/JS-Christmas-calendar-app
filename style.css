@@ -88,6 +88,7 @@ main h2 {
   padding-bottom: 5px;
   color: darkgreen;
   animation: scrollText 10s linear infinite;
+  overflow: visible;
 }
 
 .calendar {
