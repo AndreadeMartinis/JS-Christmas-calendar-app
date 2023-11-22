@@ -105,8 +105,8 @@ function closeStarterOverlay() {
 }
 
 function loadApp() {
-  window.addEventListener("DOMContentLoaded", createCalendar);
   const startButton = document.querySelector(".icon-button");
+  createCalendar();
 
   startButton.addEventListener("click", closeStarterOverlay);
 }
