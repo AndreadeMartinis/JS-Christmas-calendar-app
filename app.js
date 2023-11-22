@@ -101,7 +101,9 @@ infoIcon.addEventListener("click", openInfoPanel);
 
 function closeStarterOverlay() {
   const overlay = document.querySelector(".overlay-welcome");
+  const calendar = document.querySelector(".calendar");
   overlay.style.display = "none";
+  calendar.style.display = "grid";
 }
 
 function loadApp() {

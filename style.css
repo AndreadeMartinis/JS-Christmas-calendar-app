@@ -131,7 +131,7 @@ main h2 {
 }
 
 .calendar {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 10px;
