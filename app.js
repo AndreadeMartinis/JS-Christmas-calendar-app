@@ -4,6 +4,35 @@ const imageUrls = Array.from(
   (_, index) => `src/img/${index + 1}_dayPromo.png`
 );
 
+// Array di icone
+
+const iconElements = [
+  '<i class="fa-solid fa-gift"></i>',
+  '<i class="fa-solid fa-star"></i>',
+  '<i class="fa-solid fa-snowman"></i>',
+  '<i class="fa-solid fa-cookie-bite"></i>',
+  '<i class="fa-solid fa-bell"></i>',
+  '<i class="fa-solid fa-candy-cane"></i>',
+  '<i class="fa-regular fa-snowflake"></i>',
+  '<i class="fa-solid fa-tree"></i>',
+  '<i class="fa-solid fa-sleigh"></i>',
+  '<i class="fa-solid fa-gifts"></i>',
+  '<i class="fa-solid fa-star"></i>',
+  '<i class="fa-solid fa-bell"></i>',
+  '<i class="fa-regular fa-snowflake"></i>',
+  '<i class="fa-solid fa-tree"></i>',
+  '<i class="fa-solid fa-candy-cane"></i>',
+  '<i class="fa-solid fa-cookie-bite"></i>',
+  '<i class="fa-solid fa-sleigh"></i>',
+  '<i class="fa-solid fa-gift"></i>',
+  '<i class="fa-solid fa-snowman"></i>',
+  '<i class="fa-solid fa-star"></i>',
+  '<i class="fa-solid fa-tree"></i>',
+  '<i class="fa-regular fa-snowflake"></i>',
+  '<i class="fa-solid fa-sleigh"></i>',
+  '<i class="fa-solid fa-gifts"></i>',
+];
+
 //const today = new Date().getDate();
 // Data odierna
 const today = 12;
@@ -22,8 +51,8 @@ function createCalendar() {
       const expiredOverflow = document.createElement("span");
       expiredOverflow.classList.add("expiredOffer");
       dayBoxEl.appendChild(expiredOverflow);
-      dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`;
-      dayBoxEl.classList.add("dayBoxEl-open");
+      /* dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`; */
+      dayBoxEl.innerHTML = iconElements[day - 1];
     } else {
       dayBoxEl.textContent = day;
       dayBoxEl.classList.add("dayBoxEl-today");
@@ -55,10 +84,10 @@ function openImage(dayBoxEl, day) {
 
     overlayPopup.addEventListener("click", () => {
       overlayPopup.style.display = "none";
-      dayBoxEl.style.backgroundImage = `url(${imageUrl})`;
+      /* dayBoxEl.style.backgroundImage = `url(${imageUrl})`; */
       infoPromo.textContent = "";
       if (day === today) dayBoxEl.textContent = "";
-      dayBoxEl.classList.add("dayBoxEl-open");
+      /* dayBoxEl.classList.add("dayBoxEl-open"); */
       dayBoxEl.classList.remove("dayBoxEl-today");
     });
   } else {
@@ -100,16 +129,19 @@ const infoIcon = document.querySelector(".fa-candy-cane");
 infoIcon.addEventListener("click", openInfoPanel);
 
 function closeStarterOverlay() {
+  const main = document.querySelector("main");
   const overlay = document.querySelector(".overlay-welcome");
   const calendar = document.querySelector(".calendar");
-  overlay.style.display = "none";
+  overlay.classList.add("fade-out");
+  setTimeout(() => {
+    main.removeChild(overlay);
+  }, 600);
   calendar.style.display = "grid";
 }
 
 function loadApp() {
   const startButton = document.querySelector(".icon-button");
   createCalendar();
-
   startButton.addEventListener("click", closeStarterOverlay);
 }
 
