@@ -13,8 +13,8 @@ const iconElements = [
   '<i class="fa-solid fa-cookie-bite"></i>',
   '<i class="fa-solid fa-bell"></i>',
   '<i class="fa-solid fa-candy-cane"></i>',
-  '<i class="fa-regular fa-snowflake"></i>',
   '<i class="fa-solid fa-tree"></i>',
+  '<i class="fa-regular fa-snowflake"></i>',
   '<i class="fa-solid fa-sleigh"></i>',
   '<i class="fa-solid fa-gifts"></i>',
   '<i class="fa-solid fa-star"></i>',
@@ -35,7 +35,7 @@ const iconElements = [
 
 //const today = new Date().getDate();
 // Data odierna
-const today = 12;
+const today = 24;
 
 // Funzione per creare il calendario
 function createCalendar() {
@@ -88,8 +88,9 @@ function openImage(dayBoxEl, day) {
       /* dayBoxEl.style.backgroundImage = `url(${imageUrl})`; */
       infoPromo.textContent = "";
       if (day === today) dayBoxEl.textContent = "";
-      /* dayBoxEl.classList.add("dayBoxEl-open"); */
-      dayBoxEl.classList.remove("dayBoxEl-today");
+      /* dayBoxEl.classList.add("dayBoxEl-open"); 
+      dayBoxEl.classList.remove("dayBoxEl-today"); */
+      dayBoxEl.innerHTML = iconElements[day - 1];
     });
   } else {
     const futureOfferOverflow = document.createElement("span");
