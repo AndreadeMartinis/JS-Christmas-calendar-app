@@ -143,8 +143,28 @@ function closeStarterOverlay() {
 
 function loadApp() {
   const startButton = document.querySelector(".icon-button");
-  createCalendar();
-  startButton.addEventListener("click", closeStarterOverlay);
+
+  // Creazione di un array di oggetti con informazioni sulle immagini da pre-caricare
+  const imagesToPreload = Array.from({ length: 24 }, (_, index) => ({
+    id: `image${index + 1}`,
+    src: `src/img/${index + 1}_dayPromo.png`,
+  }));
+
+  // Creazione di un oggetto Preload
+  const preloader = new createjs.LoadQueue();
+
+  // Aggiungi un listener per l'evento di completamento del pre-caricamento
+  preloader.addEventListener("complete", () => {
+    // Caricamento completato: ora puoi avviare il resto dell'applicazione
+    createCalendar();
+    startButton.addEventListener("click", closeStarterOverlay);
+  });
+
+  // Aggiungi le immagini alla coda del pre-caricamento
+  preloader.loadManifest(imagesToPreload);
+
+  // Avvia il pre-caricamento
+  preloader.load();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -177,7 +197,9 @@ loadApp();
 /* 
 TODO:
 
-- Al caricamento mandare un popup di auguri che si chiude e mostra il calendario
+- Sistemare footer
+- Sistemare messaggio di benvenuto
+- Rendere le caselle aperte un po' più scure
 
 
 */
