@@ -22,8 +22,8 @@ const iconElements = [
   '<i class="fa-regular fa-snowflake"></i>',
   '<i class="fa-solid fa-tree"></i>',
   '<i class="fa-solid fa-candy-cane"></i>',
-  '<i class="fa-solid fa-cookie-bite"></i>',
   '<i class="fa-solid fa-sleigh"></i>',
+  '<i class="fa-solid fa-cookie-bite"></i>',
   '<i class="fa-solid fa-gift"></i>',
   '<i class="fa-solid fa-snowman"></i>',
   '<i class="fa-solid fa-star"></i>',
@@ -35,7 +35,7 @@ const iconElements = [
 
 //const today = new Date().getDate();
 // Data odierna
-const today = 24;
+const today = 12;
 
 // Funzione per creare il calendario
 function createCalendar() {
