@@ -51,7 +51,8 @@ function createCalendar() {
       const expiredOverflow = document.createElement("span");
       expiredOverflow.classList.add("expiredOffer");
       dayBoxEl.appendChild(expiredOverflow);
-      /* dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`; */
+      /* dayBoxEl.style.backgroundImage = `url(${imageUrls[day - 1]})`; 
+      dayBoxEl.classList.add("dayBoxEl-open"); */
       dayBoxEl.innerHTML = iconElements[day - 1];
     } else {
       dayBoxEl.textContent = day;
