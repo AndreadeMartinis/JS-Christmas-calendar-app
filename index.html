@@ -27,20 +27,38 @@
     <header>
       <span class="infoIcon">
         <i class="fa-solid fa-candy-cane"></i>
-        <p>INFO</p>
+        <p>Info</p>
       </span>
       <!-- Messaggio di benvenuto -->
       <h1>Buon Natale da Gocce di Bellezza!</h1>
     </header>
     <main>
+      <div class="overlay-welcome">
+        <div class="container-welcome">
+          <img src="src/img/logo.png" />
+          <div class="loader-container">
+            <button class="icon-button">
+              <p class="icon-message">Aprimi!!!</p>
+              <i class="fa-solid fa-gift"></i>
+            </button>
+
+            <div class="loader-bar" id="loader-bar"></div>
+            <div class="loader-text" id="loader-text">0%</div>
+          </div>
+        </div>
+      </div>
       <!-- Data e messaggio -->
-      <p class="dateMessage"></p>
+      <div class="todayContainer">
+        <p class="today"></p>
+        <p class="month">DIC</p>
+        <p class="dateMessage"></p>
+      </div>
       <!-- Messaggio di ingaggio -->
-      <h2>Scopri l'offerta del giorno</h2>
-      <h2>e corri da noi per approfittarne!</h2>
+      <h2>Ogni giorno un regalo...</h2>
+      <h2>corri da noi per approfittarne!</h2>
       <div class="calendar"></div>
       <!-- Popup e overlay -->
-      <div class="overlay">
+      <div class="overlay-popup">
         <div class="popup">
           <img class="popupImage" />
         </div>

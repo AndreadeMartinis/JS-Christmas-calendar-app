@@ -50,11 +50,11 @@ function openImage(dayBoxEl, day) {
       infoPromo.innerHTML = `Offerta del giorno! <br> Corri da noi, ti stiamo aspettando!`;
     popupImage.insertAdjacentElement("afterend", infoPromo);
 
-    const overlay = document.querySelector(".overlay");
-    overlay.style.display = "flex";
+    const overlayPopup = document.querySelector(".overlay-popup");
+    overlayPopup.style.display = "flex";
 
-    overlay.addEventListener("click", () => {
-      overlay.style.display = "none";
+    overlayPopup.addEventListener("click", () => {
+      overlayPopup.style.display = "none";
       dayBoxEl.style.backgroundImage = `url(${imageUrl})`;
       infoPromo.textContent = "";
       if (day === today) dayBoxEl.textContent = "";
@@ -80,25 +80,64 @@ function openInfoPanel() {
   popupImage.src = "src/img/infoPromo.png";
   popupImage.alt = "Info Evento";
 
-  const overlay = document.querySelector(".overlay");
-  overlay.style.display = "flex";
+  const overlayPopup = document.querySelector(".overlay-popup");
+  overlayPopup.style.display = "flex";
 
-  overlay.addEventListener("click", () => {
-    overlay.style.display = "none";
+  overlayPopup.addEventListener("click", () => {
+    overlayPopup.style.display = "none";
   });
 }
 
 function writeDateMessage() {
   const messageEl = document.querySelector(".dateMessage");
+  const todayEl = document.querySelector(".today");
   //prettier-ignore
-  messageEl.textContent = `Oggi è ${today} Dicembre, mancano ${25 - today} giorni a Natale!!!`;
+  messageEl.textContent = `-${25 - today}`;
+  todayEl.textContent = today;
 }
 
 const infoIcon = document.querySelector(".fa-candy-cane");
 infoIcon.addEventListener("click", openInfoPanel);
 
-window.addEventListener("DOMContentLoaded", createCalendar);
+function closeStarterOverlay() {
+  const overlay = document.querySelector(".overlay-welcome");
+  overlay.style.display = "none";
+}
 
+function loadApp() {
+  window.addEventListener("DOMContentLoaded", createCalendar);
+  const startButton = document.querySelector(".icon-button");
+
+  startButton.addEventListener("click", closeStarterOverlay);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loaderBar = document.getElementById("loader-bar");
+  const loaderText = document.getElementById("loader-text");
+  const giftIcon = document.querySelector(".fa-gift");
+  const iconMessage = document.querySelector(".icon-message");
+
+  let progress = 0;
+
+  function updateLoader() {
+    if (progress < 100) {
+      progress += 2;
+      loaderBar.style.width = `${progress}%`;
+      loaderText.textContent = `${progress}%`;
+      if (progress === 100) {
+        // Caricamento completato: applica gli effetti all'icona
+        giftIcon.style.color = "rgb(165, 10, 10)";
+        iconMessage.style.color = "rgb(165, 10, 10)";
+        giftIcon.classList.add("shake");
+      }
+      setTimeout(updateLoader, 20);
+    }
+  }
+
+  updateLoader();
+});
+
+loadApp();
 /* 
 TODO:
 
