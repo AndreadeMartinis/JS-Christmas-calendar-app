@@ -35,7 +35,7 @@ const iconElements = [
 
 //const today = new Date().getDate();
 // Data odierna
-const today = 9;
+const today = 10;
 
 //Giorni di chiusura
 const closingDays = [3, 4, 9, 13, 14, 22];
