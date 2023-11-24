@@ -163,47 +163,94 @@ main h2 {
   border: 1px solid #9a4444;
   border-radius: 4px;
   box-shadow: 0 0 5px rgb(248, 235, 224);
+}
 
-  background-size: cover;
+.dayBoxEl-today-animation {
+  box-shadow: 0 0 5px rgb(248, 224, 224);
+  animation: flashingBox 5s linear infinite;
 }
 
 .dayBoxEl-open {
-  outline: none;
+  font-size: 16px;
+  /* outline: none; */
+  /* prettier-ignore */
+  background: linear-gradient(
+  to top,
+  rgb(246, 221, 188),
+  rgb(255, 203, 134)
+  );
+  /*box-shadow: 0 0 5px #9a4444 inset;*/
+  box-shadow: none;
 }
 
-.dayBoxEl:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.785);
-  background-color: rgb(253, 213, 160);
-}
-
-.dayBoxEl-today {
-  animation: flashingBox 3s ease-in-out infinite;
-}
-
-.expiredOffer {
-  font-size: 9px;
+.dayBoxEl svg {
   position: absolute;
-  color: transparent;
-  background-color: #413e3e3e;
+  top: 18px;
+  right: 18px;
+}
+
+.dayBoxEl-overlay-dayoff {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  color: darkgreen;
+}
+
+/* .dayBoxEl-overflow-dayoff-expired {
+  background-color: rgba(0, 0, 0, 0.2);
+} */
+
+/* .dayBoxEl-overflow-dayoff p {
+  color: rgb(2, 42, 2);
+} */
+
+/* .dayBoxEl-overflow-overflow {
+  display: flex;
+  color: rgba(184, 8, 8, 0.279);
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+} */
+
+.dayBoxEl-overlay-openbox {
+  position: absolute;
+  display: flex;
+  flex-flow: row-reverse;
+  font-size: 11px;
+  background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  display: flex;
-  align-items: center;
   text-align: center;
 }
 
-.futureOffer {
+.dayBoxEl-overlay-openbox p {
+  margin-top: 8px;
+  margin-right: 10px;
+  color: rgb(2, 42, 2);
+}
+
+.dayBoxEL-overlay-futureOffer {
   font-size: 11px;
   position: absolute;
   color: white;
-  background-color: #b81515;
+  background-color: #b81515d4;
   width: 100%;
   height: 100%;
   border-radius: inherit;
   display: flex;
   align-items: center;
   text-align: center;
+}
+
+.dayBoxEl:hover {
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.785);
+  background-color: rgb(253, 213, 160); */
 }
 
 .logo {
@@ -332,40 +379,13 @@ footer .container-right span {
 
 @keyframes flashingBox {
   0% {
-    box-shadow: 0 0 5px rgb(248, 235, 224);
-  }
-  12.5% {
-    box-shadow: 0 0 7.5px rgb(207, 191, 142);
-  }
-  25% {
-    box-shadow: 0 0 10px rgb(207, 191, 142);
-  }
-  37.5% {
-    box-shadow: 0 0 12.5px rgb(224, 193, 99);
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 15px rgb(224, 193, 99);
-  }
-  62.5% {
-    box-shadow: 0 0 12.5px rgb(224, 193, 99);
-  }
-  75% {
-    box-shadow: 0 0 10px rgb(207, 191, 142);
-  }
-  87.5% {
-    box-shadow: 0 0 7.5px rgb(207, 191, 142);
+    opacity: 0.5;
   }
   100% {
-    box-shadow: 0 0 5px rgb(248, 235, 224);
-  }
-}
-
-@keyframes scrollText {
-  from {
-    transform: translateX(250%);
-  }
-  to {
-    transform: translateX(-250%);
+    opacity: 1;
   }
 }
 
@@ -414,13 +434,26 @@ footer .container-right span {
 
 @keyframes shake {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(0deg);
   }
 
   50% {
-    transform: translate(2px);
+    transform: translate(2px) rotate(12deg);
   }
   100% {
-    transform: translate(-2px);
+    transform: translate(-2px) rotate(-12deg);
+  }
+}
+
+.dayBoxEl-flip {
+  animation: flip 0.6s;
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateY(-90deg);
   }
 }
