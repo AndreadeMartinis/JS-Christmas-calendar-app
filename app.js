@@ -86,7 +86,7 @@ function openBox(dayBoxEl, day) {
     //Se la casella non è stata ancora aperta, applica l'effetto
     if (!openedBoxes[day - 1]) {
       dayBoxEl.classList.add("dayBoxEl-flip");
-      openedBoxes[day - 1] = true;
+      if (!closingDays.includes(day)) openedBoxes[day - 1] = true;
       // Rimuovi la classe dopo l'animazione
       setTimeout(() => {
         controlPopup(dayBoxEl, day);
@@ -261,8 +261,8 @@ TODO:
 
 - Sistemare footer
 - Sistemare messaggio di benvenuto
-- Rendere le caselle aperte un po' più scure
-- Centrare merry christmas del flyer
+- Alla pressione sul pulsante, cambiare colore
+- Centrare merry christmas del flyer popup
 
 
 */

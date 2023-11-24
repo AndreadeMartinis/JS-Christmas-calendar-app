@@ -200,23 +200,6 @@ main h2 {
   color: darkgreen;
 }
 
-/* .dayBoxEl-overflow-dayoff-expired {
-  background-color: rgba(0, 0, 0, 0.2);
-} */
-
-/* .dayBoxEl-overflow-dayoff p {
-  color: rgb(2, 42, 2);
-} */
-
-/* .dayBoxEl-overflow-overflow {
-  display: flex;
-  color: rgba(184, 8, 8, 0.279);
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-  height: 55px;
-} */
-
 .dayBoxEl-overlay-openbox {
   position: absolute;
   display: flex;
@@ -248,10 +231,10 @@ main h2 {
   text-align: center;
 }
 
-.dayBoxEl:hover {
-  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.785);
-  background-color: rgb(253, 213, 160); */
-}
+/* .dayBoxEl:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.785);
+  background-color: rgb(253, 213, 160);
+} */
 
 .logo {
   width: 65px;
