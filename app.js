@@ -38,7 +38,7 @@ const iconElements = [
 const today = 10;
 
 //Giorni di chiusura
-const closingDays = [3, 4, 9, 13, 14, 22];
+const closingDays = [3, 4, 8, 9, 10, 17, 24];
 
 // Array per tenere traccia dello stato di apertura di ciascun giorno
 const openedBoxes = Array(24).fill(false);
@@ -264,6 +264,8 @@ TODO:
 - Alla pressione sul pulsante, cambiare colore
 - Centrare merry christmas del flyer popup
 - Far gestire il colore dell'svg dal css
+- Capire cosa accade al caricamento con il contenuto "sotto" che appare "sopra"
+- Sistemare flickering delle immagini
 
 
 */
