@@ -344,7 +344,7 @@ main h2 + h2 {
   border-radius: 3px;
   z-index: 1000;
   height: 300px;
-  width: 90%;
+  width: 80%;
 }
 
 .popupImage {
