@@ -49,13 +49,13 @@ function createCalendar() {
 
   for (let day = 1; day <= 24; day++) {
     const dayBoxEl = document.createElement("div");
-    dayBoxEl.classList.add("dayBoxEl");
+    dayBoxEl.classList.add("dayBox");
     dayBoxEl.textContent = day;
 
     //prettier-ignore
     if (closingDays.includes(day)) {
       //Giorni di chiusura
-      const dayoffOverlay = addOverlay(dayBoxEl, "dayBoxEl-overlay-dayoff");
+      const dayoffOverlay = addOverlay(dayBoxEl, "dayBox-overlay-dayoff");
       const dayoffMessage = document.createElement("p");
       dayoffMessage.textContent = "Oggi";
       dayoffOverlay.appendChild(dayoffMessage);
@@ -64,7 +64,7 @@ function createCalendar() {
       dayoffOverlay.appendChild(dayoffMessage2);
     } else if (day === today) {
       // Effetto risalto casella del giorno
-      dayBoxEl.classList.add("dayBoxEl-today-animation");
+      dayBoxEl.classList.add("dayBox-today-animation");
     }
 
     if (day < today) {
@@ -85,7 +85,7 @@ function openBox(dayBoxEl, day) {
   if (day <= today) {
     //Se la casella non è stata ancora aperta, applica l'effetto
     if (!openedBoxes[day - 1]) {
-      dayBoxEl.classList.add("dayBoxEl-flip");
+      dayBoxEl.classList.add("dayBox-flip");
       if (!closingDays.includes(day)) openedBoxes[day - 1] = true;
       // Rimuovi la classe dopo l'animazione
       setTimeout(() => {
@@ -94,7 +94,7 @@ function openBox(dayBoxEl, day) {
     } else controlPopup(dayBoxEl, day);
   } else {
     const futureOfferOverlay = document.createElement("span");
-    futureOfferOverlay.classList.add("dayBoxEL-overlay-futureOffer");
+    futureOfferOverlay.classList.add("dayBox-overlay-futureOffer");
     futureOfferOverlay.textContent = "Ogni giorno una sorpresa diversa!";
     dayBoxEl.appendChild(futureOfferOverlay);
     setTimeout(() => {
@@ -127,21 +127,21 @@ function openInfoPopup() {
 }
 
 function writeTodayMessage() {
-  const messageEl = document.querySelector(".dateMessage");
+  const countdownEl = document.querySelector(".countdown");
   const todayEl = document.querySelector(".today");
   //prettier-ignore
-  messageEl.textContent = `-${25 - today}`;
+  countdownEl.textContent = `-${25 - today} a Natale!`;
   todayEl.textContent = today;
 }
 
 function closeStarterOverlay() {
-  const main = document.querySelector("main");
+  const body = document.querySelector("body");
   const overlay = document.querySelector(".overlay-welcome");
   const calendar = document.querySelector(".calendar");
   const infoIcon = document.querySelector(".fa-candy-cane");
   overlay.classList.add("fade-out");
   setTimeout(() => {
-    main.removeChild(overlay);
+    body.removeChild(overlay);
   }, 600);
   infoIcon.addEventListener("click", openInfoPopup);
   writeTodayMessage();
@@ -212,7 +212,7 @@ function createGroupWithPath() {
 }
 
 function controlPopup(dayBoxEl, day) {
-  dayBoxEl.classList.remove("dayBoxEl-flip");
+  dayBoxEl.classList.remove("dayBox-flip");
   const imageUrl = imageUrls[day - 1];
   const popupImage = document.querySelector(".popupImage");
   const overlayPopup = document.querySelector(".overlay-popup");
@@ -235,7 +235,7 @@ function controlPopup(dayBoxEl, day) {
     overlayPopup.style.display = "none";
     /* dayBoxEl.style.backgroundImage = `url(${imageUrl})`; */
     if (!closingDays.includes(day)) {
-      const openBoxOverlay = addOverlay(dayBoxEl, "dayBoxEl-overlay-openbox");
+      const openBoxOverlay = addOverlay(dayBoxEl, "dayBox-overlay-openbox");
       const dayInTheCorner = document.createElement("p");
 
       dayBoxEl.textContent = "";
@@ -244,8 +244,8 @@ function controlPopup(dayBoxEl, day) {
       dayInTheCorner.textContent = day;
       openBoxOverlay.appendChild(dayInTheCorner);
 
-      dayBoxEl.classList.add("dayBoxEl-open");
-      dayBoxEl.classList.remove("dayBoxEl-today-animation");
+      dayBoxEl.classList.add("dayBox-open");
+      dayBoxEl.classList.remove("dayBox-today-animation");
 
       const icon = document.createElement("icon");
       icon.classList.add("fa-solid", iconElements[day - 1]);
@@ -263,6 +263,7 @@ TODO:
 - Sistemare messaggio di benvenuto
 - Alla pressione sul pulsante, cambiare colore
 - Centrare merry christmas del flyer popup
+- Far gestire il colore dell'svg dal css
 
 
 */

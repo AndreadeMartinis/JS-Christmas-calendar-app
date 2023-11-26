@@ -26,8 +26,9 @@ body {
   font-weight: 400;
 
   background-image: url("src/img/background.png");
-  background-size: cover;
+  background-size: 175%;
   background-position: center;
+  background-repeat: no-repeat;
 
   backdrop-filter: blur(2px);
 }
@@ -42,205 +43,7 @@ body::before {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* -------------------- HEADER -------------------- */
-
-header {
-  height: 4dvh;
-
-  background-color: transparent;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  padding: 5px;
-  background-color: rgba(165, 10, 10, 0.7);
-}
-
-h1 {
-  display: inline;
-  font-size: 23px;
-  z-index: 1;
-}
-
-.infoIcon {
-  position: absolute;
-  top: 6px;
-  left: 8px;
-  cursor: pointer;
-  overflow: visible;
-}
-
-.infoIcon i {
-  font-size: 14px;
-  animation: growAndShrinkIcon 3s ease-in-out 5;
-  animation-delay: 5s;
-}
-
-.infoIcon p {
-  font-size: 10px;
-  letter-spacing: 1.1px;
-}
-
-/* -------------------- MAIN -------------------- */
-
-main {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 88dvh;
-}
-
-main h2 {
-  font-size: 17px;
-  color: white;
-  text-shadow: 0 0 5px black;
-  letter-spacing: 1.1px;
-}
-
-.todayContainer {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  width: 40px;
-  background-color: rgb(254, 232, 204);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #9a4444;
-  border-radius: 4px;
-  padding: 3px;
-  color: darkgreen;
-}
-
-.today {
-  font-size: 24px;
-  width: 100%;
-  text-align: center;
-  border-right: 1px dotted #9a4444;
-  border-left: 1px dotted #9a4444;
-  border-top: 1px dotted #9a4444;
-}
-
-.month {
-  width: 100%;
-  text-align: center;
-  border-right: 1px dotted #9a4444;
-  border-left: 1px dotted #9a4444;
-  border-bottom: 1px dotted #9a4444;
-}
-
-.dateMessage {
-  font-size: 16px;
-}
-
-.calendar {
-  display: none;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  gap: 10px;
-  width: 90%;
-  padding: 5px;
-}
-
-.dayBoxEl {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-
-  width: 55px;
-  height: 55px;
-  font-size: 18px;
-  color: darkgreen;
-  background-color: rgb(254, 232, 204);
-
-  outline: 2px dotted #9a4444;
-  outline-offset: -8px;
-  border: 1px solid #9a4444;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgb(248, 235, 224);
-}
-
-.dayBoxEl-today-animation {
-  box-shadow: 0 0 5px rgb(248, 224, 224);
-  animation: flashingBox 5s linear infinite;
-}
-
-.dayBoxEl-open {
-  font-size: 16px;
-  /* outline: none; */
-  /* prettier-ignore */
-  background: linear-gradient(
-  to top,
-  rgb(246, 221, 188),
-  rgb(255, 203, 134)
-  );
-  /*box-shadow: 0 0 5px #9a4444 inset;*/
-  box-shadow: none;
-}
-
-.dayBoxEl svg {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-}
-
-.dayBoxEl-overlay-dayoff {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  font-size: 11px;
-  color: darkgreen;
-}
-
-.dayBoxEl-overlay-openbox {
-  position: absolute;
-  display: flex;
-  flex-flow: row-reverse;
-  font-size: 11px;
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  text-align: center;
-}
-
-.dayBoxEl-overlay-openbox p {
-  margin-top: 8px;
-  margin-right: 10px;
-  color: rgb(2, 42, 2);
-}
-
-.dayBoxEL-overlay-futureOffer {
-  font-size: 11px;
-  position: absolute;
-  color: white;
-  background-color: #b81515d4;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-/* .dayBoxEl:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.785);
-  background-color: rgb(253, 213, 160);
-} */
-
-.logo {
-  width: 65px;
-  height: 65px;
-}
-
+/* -------------------- WELCOME LAYER -------------------- */
 .overlay-welcome {
   position: fixed;
   top: 0;
@@ -266,6 +69,255 @@ main h2 {
 
 .overlay-welcome img {
   width: 65%;
+}
+
+.loader-container {
+  width: 30%;
+  text-align: center;
+}
+
+.loader-bar {
+  width: 0;
+  height: 8px;
+  border-radius: 3px;
+  background-color: rgba(179, 120, 86, 0.8);
+  margin-bottom: 10px;
+}
+
+.loader-text {
+  font-size: 16px;
+  color: #b37855;
+  font-weight: bold;
+}
+
+.overlay-welcome .fa-gift {
+  color: grey;
+  font-size: 24px;
+  transition: color 0.5s, font-size 0.5s;
+  margin-block: 5px 10px;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button p {
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: "Glass Antiqua", cursive;
+}
+
+/* -------------------- HEADER -------------------- */
+
+header {
+  height: 4dvh;
+
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  background-color: rgba(165, 10, 10, 0.7);
+}
+
+h1 {
+  display: inline;
+  font-size: 23px;
+  z-index: 1;
+}
+
+.infoIcon-container {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.infoIcon-container i {
+  font-size: 14px;
+  animation: growAndShrinkIcon 3s ease-in-out 5;
+  animation-delay: 5s;
+}
+
+.infoIcon-container p {
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+/* -------------------- MAIN -------------------- */
+
+main {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 88dvh;
+}
+
+main h2 {
+  font-size: 17px;
+  letter-spacing: 1.1px;
+}
+
+main h2 + h2 {
+  margin-top: 10px;
+}
+
+.countdown-message-container {
+  /* position: absolute;
+  top: 5px;
+  width: 40px;
+  right: 10px; */
+  width: 90%;
+  background-color: rgba(254, 232, 204, 0.6);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.countdown-container {
+  border: 1px solid #7e2a2a;
+  /* outline: 1px solid black; */
+  outline-offset: 3px;
+  width: 20%;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  color: darkgreen;
+}
+
+.today {
+  font-size: 24px;
+  text-align: center;
+  /* border-right: 1px dotted #9a4444;
+  border-left: 1px dotted #9a4444;
+  border-top: 1px dotted #9a4444; */
+}
+
+.month {
+  text-align: center;
+  border-bottom: 1px dotted black;
+  /* border-right: 1px dotted #9a4444;
+  border-left: 1px dotted #9a4444;
+  border-bottom: 1px dotted #9a4444; */
+}
+
+.countdown {
+  font-size: 16px;
+  text-align: center;
+  background-color: #9a4444a5;
+}
+
+.calendar {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 10px;
+  width: 90%;
+  padding: 5px;
+}
+
+.dayBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  width: 55px;
+  height: 55px;
+  font-size: 18px;
+  color: darkgreen;
+  background-color: rgb(254, 232, 204);
+
+  outline: 2px dotted #9a4444;
+  outline-offset: -8px;
+  border: 1px solid #9a4444;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgb(248, 235, 224);
+}
+
+.dayBox-today-animation {
+  box-shadow: 0 0 5px rgb(248, 224, 224);
+  animation: flashingBox 5s linear infinite;
+}
+
+.dayBox-open {
+  font-size: 16px;
+  /* outline: none; */
+  /* prettier-ignore */
+  background: linear-gradient(
+  to top,
+  rgb(246, 221, 188),
+  rgb(255, 203, 134)
+  );
+  /*box-shadow: 0 0 5px #9a4444 inset;*/
+  box-shadow: none;
+}
+
+.dayBox svg {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.dayBox-overlay-dayoff {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  color: darkgreen;
+}
+
+.dayBox-overlay-openbox {
+  position: absolute;
+  display: flex;
+  flex-flow: row-reverse;
+  font-size: 11px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  text-align: center;
+}
+
+.dayBox-overlay-openbox p {
+  margin-top: 8px;
+  margin-right: 10px;
+  color: rgb(2, 42, 2);
+}
+
+.dayBox-overlay-futureOffer {
+  font-size: 11px;
+  position: absolute;
+  color: white;
+  background-color: #b81515d4;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.dayBox:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.785);
 }
 
 /* Popup and overlay */
@@ -348,6 +400,10 @@ footer .container-right span {
   transition: opacity 0.5s ease-out;
 }
 
+.shake {
+  animation: shake 0.5s 3;
+}
+
 @keyframes growAndShrinkIcon {
   0% {
     transform: scale(1);
@@ -372,49 +428,6 @@ footer .container-right span {
   }
 }
 
-.loader-container {
-  width: 30%;
-  text-align: center;
-}
-
-.loader-bar {
-  width: 0;
-  height: 8px;
-  border-radius: 3px;
-  background-color: rgba(179, 120, 86, 0.8);
-  margin-bottom: 10px;
-}
-
-.loader-text {
-  font-size: 16px;
-  color: #b37855;
-  font-weight: bold;
-}
-
-.overlay-welcome .fa-gift {
-  color: grey;
-  font-size: 24px;
-  transition: color 0.5s, font-size 0.5s;
-  margin-block: 5px 10px;
-}
-
-.icon-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.icon-button p {
-  color: transparent;
-  font-size: 14px;
-  letter-spacing: 1px;
-  font-family: "Glass Antiqua", cursive;
-}
-
-.shake {
-  animation: shake 0.5s 3;
-}
-
 @keyframes shake {
   0% {
     transform: translateX(0) rotate(0deg);
@@ -428,7 +441,7 @@ footer .container-right span {
   }
 }
 
-.dayBoxEl-flip {
+.dayBox-flip {
   animation: flip 0.6s;
 }
 
