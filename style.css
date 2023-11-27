@@ -385,13 +385,16 @@ footer .container-left {
   text-align: start;
   height: 100%;
 }
-footer .container-right {
-  text-align: end;
+footer .container-left p {
+  font-size: 12px;
 }
 footer .container-left span {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 3px;
+}
+footer .container-right {
+  text-align: end;
 }
 
 /* -------------------- ANIMATIONS -------------------- */
