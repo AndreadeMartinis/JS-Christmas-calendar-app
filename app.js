@@ -261,11 +261,11 @@ TODO:
 
 - Sistemare footer
 - Sistemare messaggio di benvenuto
-- Alla pressione sul pulsante, cambiare colore
-- Centrare merry christmas del flyer popup
+- Alla pressione sul pulsante, cambiare colore (onfocus?)
 - Far gestire il colore dell'svg dal css
 - Capire cosa accade al caricamento con il contenuto "sotto" che appare "sopra"
 - Sistemare flickering delle immagini
+- Mettere offerta di domani
 
 
 */
