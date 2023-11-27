@@ -250,7 +250,7 @@ main h2 + h2 {
 
 .dayBox-today-animation {
   box-shadow: 0 0 5px rgb(248, 224, 224);
-  animation: flashingBox 5s linear infinite;
+  animation: flashingBox 4s linear infinite;
 }
 
 .dayBox-open {
@@ -341,7 +341,7 @@ main h2 + h2 {
   border: 2px solid #333;
   border-radius: 3px;
   z-index: 1000;
-  height: 300px;
+  height: 312px;
   width: 80%;
 }
 
@@ -404,10 +404,6 @@ footer .container-right {
   transition: opacity 0.5s ease-out;
 }
 
-.shake {
-  animation: shake 0.5s 3;
-}
-
 @keyframes growAndShrinkIcon {
   0% {
     transform: scale(1);
@@ -420,12 +416,16 @@ footer .container-right {
   }
 }
 
+.shake {
+  animation: shake 0.5s 3;
+}
+
 @keyframes flashingBox {
   0% {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   100% {
     opacity: 1;

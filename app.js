@@ -35,7 +35,7 @@ const iconElements = [
 
 //const today = new Date().getDate();
 // Data odierna
-const today = 10;
+const today = 11;
 
 //Giorni di chiusura
 const closingDays = [3, 4, 8, 9, 10, 17, 24];
@@ -56,15 +56,15 @@ function createCalendar() {
     if (closingDays.includes(day)) {
       //Giorni di chiusura
       const dayoffOverlay = addOverlay(dayBoxEl, "dayBox-overlay-dayoff");
-      const dayoffMessage = document.createElement("p");
-      dayoffMessage.textContent = "Oggi";
-      dayoffOverlay.appendChild(dayoffMessage);
-      const dayoffMessage2 = document.createElement("p");
-      dayoffMessage2.textContent = "Chiuso";
-      dayoffOverlay.appendChild(dayoffMessage2);
-    } else if (day === today) {
+      addBoxMessage("Oggi", "Chiuso", dayoffOverlay)
+    } 
+    else if (day === today)
       // Effetto risalto casella del giorno
       dayBoxEl.classList.add("dayBox-today-animation");
+    else if(day === today+1){
+      // Casella del giorno dopo
+      const tomorrowOverlay = addOverlay(dayBoxEl, "dayBox-overlay-dayoff");
+      addBoxMessage("Offerta di", "Domani", tomorrowOverlay)
     }
 
     if (day < today) {
@@ -82,7 +82,7 @@ function createCalendar() {
 }
 
 function openBox(dayBoxEl, day) {
-  if (day <= today) {
+  if (day <= today + 1) {
     //Se la casella non è stata ancora aperta, applica l'effetto
     if (!openedBoxes[day - 1]) {
       dayBoxEl.classList.add("dayBox-flip");
@@ -111,6 +111,15 @@ function addOverlay(el, overlayClass) {
   overlay.classList.add(overlayClass);
   el.appendChild(overlay);
   return overlay;
+}
+
+function addBoxMessage(firstMessage, secondMessage, overlay) {
+  const firstMessageP = document.createElement("p");
+  firstMessageP.textContent = firstMessage;
+  overlay.appendChild(firstMessageP);
+  const secondMessageP = document.createElement("p");
+  secondMessageP.textContent = secondMessage;
+  overlay.appendChild(secondMessageP);
 }
 
 function openInfoPopup() {
@@ -228,6 +237,8 @@ function controlPopup(dayBoxEl, day) {
     infoPromo.textContent = `L'offerta del ${day} dicembre purtroppo è scaduta!`;
     if (day === today)
       infoPromo.innerHTML = `Offerta del giorno! <br> Corri da noi, ti stiamo aspettando!`;
+    if (day === today + 1)
+      infoPromo.innerHTML = `Questa è l'offerta di domani!<br> Non fartela scappare!`;
     popupImage.insertAdjacentElement("afterend", infoPromo);
   }
 
