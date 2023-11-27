@@ -83,15 +83,18 @@ function createCalendar() {
 
 function openBox(dayBoxEl, day) {
   if (day <= today + 1) {
-    //Se la casella non è stata ancora aperta, applica l'effetto
+    //Se la casella non è stata ancora aperta:
     if (!openedBoxes[day - 1]) {
+      //Applica l'effetto flip
       dayBoxEl.classList.add("dayBox-flip");
-      if (!closingDays.includes(day)) openedBoxes[day - 1] = true;
-      // Rimuovi la classe dopo l'animazione
+      //Se non è un giorno di chiusura e non è domani, setta la casella su "aperta"
+      if (!closingDays.includes(day) && day !== today + 1)
+        openedBoxes[day - 1] = true;
+      // Aspetta l'animazione e poi apri il popup
       setTimeout(() => {
         controlPopup(dayBoxEl, day);
       }, 600);
-    } else controlPopup(dayBoxEl, day);
+    } else controlPopup(dayBoxEl, day); //Se la casella fosse già stata aperta, apri subito il popup
   } else {
     const futureOfferOverlay = document.createElement("span");
     futureOfferOverlay.classList.add("dayBox-overlay-futureOffer");
@@ -245,7 +248,7 @@ function controlPopup(dayBoxEl, day) {
   function overlayClickHandler() {
     overlayPopup.style.display = "none";
     /* dayBoxEl.style.backgroundImage = `url(${imageUrl})`; */
-    if (!closingDays.includes(day)) {
+    if (!closingDays.includes(day) && day !== today + 1) {
       const openBoxOverlay = addOverlay(dayBoxEl, "dayBox-overlay-openbox");
       const dayInTheCorner = document.createElement("p");
 
