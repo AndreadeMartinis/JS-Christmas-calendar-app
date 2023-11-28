@@ -103,11 +103,12 @@ body::before {
   cursor: pointer;
 }
 
-.icon-button p {
+.icon-message {
   color: transparent;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   font-family: "Glass Antiqua", cursive;
+  margin-bottom: 5px;
 }
 
 /* -------------------- HEADER -------------------- */
@@ -127,10 +128,6 @@ h1 {
   display: inline;
   font-size: 23px;
   z-index: 1;
-}
-
-.desktop-message {
-  display: none;
 }
 
 .infoIcon-container {
@@ -175,10 +172,6 @@ main h2 + h2 {
 }
 
 .countdown-message-container {
-  /* position: absolute;
-  top: 5px;
-  width: 40px;
-  right: 10px; */
   width: 90%;
   background-color: rgba(254, 232, 204, 0.6);
   display: flex;
@@ -190,7 +183,6 @@ main h2 + h2 {
 
 .countdown-container {
   border: 1px solid #7e2a2a;
-  /* outline: 1px solid black; */
   outline-offset: 3px;
   width: 20%;
 }
@@ -207,17 +199,11 @@ main h2 + h2 {
 .today {
   font-size: 24px;
   text-align: center;
-  /* border-right: 1px dotted #9a4444;
-  border-left: 1px dotted #9a4444;
-  border-top: 1px dotted #9a4444; */
 }
 
 .month {
   text-align: center;
   border-bottom: 1px dotted black;
-  /* border-right: 1px dotted #9a4444;
-  border-left: 1px dotted #9a4444;
-  border-bottom: 1px dotted #9a4444; */
 }
 
 .countdown {
@@ -351,6 +337,7 @@ main h2 + h2 {
   z-index: 1000;
   height: 312px;
   width: 80%;
+  max-width: 400px;
 }
 
 .popupImage {
@@ -403,6 +390,11 @@ footer .container-left span {
 }
 footer .container-right {
   text-align: end;
+}
+
+.desktop-message {
+  display: none;
+  font-size: 13px;
 }
 
 /* -------------------- ANIMATIONS -------------------- */

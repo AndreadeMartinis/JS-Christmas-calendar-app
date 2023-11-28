@@ -191,7 +191,6 @@ function closeStarterOverlay() {
 
 function startApp() {
   const infoIcon = document.querySelector(".fa-candy-cane");
-  const calendar = document.querySelector(".calendar");
   const main = document.querySelector("main");
   infoIcon.addEventListener("click", openInfoPopup);
   writeTodayMessage(today);
