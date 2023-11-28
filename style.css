@@ -63,6 +63,8 @@ body::before {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  max-width: 500px;
+  margin: auto;
 }
 
 .overlay-welcome img {
@@ -127,6 +129,10 @@ h1 {
   z-index: 1;
 }
 
+.desktop-message {
+  display: none;
+}
+
 .infoIcon-container {
   position: absolute;
   top: 6px;
@@ -149,12 +155,14 @@ h1 {
 /* -------------------- MAIN -------------------- */
 
 main {
-  display: flex;
+  display: none;
   position: relative;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 88dvh;
+  max-width: 500px;
+  margin: auto;
 }
 
 main h2 {
@@ -455,5 +463,21 @@ footer .container-right {
   }
   100% {
     transform: perspective(400px) rotateY(-90deg);
+  }
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 650px) {
+  body {
+    background-size: cover;
+  }
+  .desktop-message {
+    display: block;
+    background-color: #2e7e2aba;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 2px black;
+    color: white;
   }
 }
