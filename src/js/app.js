@@ -179,4 +179,6 @@ TODO:
 - Alla pressione sul pulsante, cambiare colore (onfocus?)
 - Ridimensionare le immagini
 
+- CIAO!
+
 */
