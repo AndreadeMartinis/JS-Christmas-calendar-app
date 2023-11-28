@@ -227,7 +227,7 @@ main h2 + h2 {
 }
 
 .calendar {
-  display: none;
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 10px;

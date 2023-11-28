@@ -160,7 +160,7 @@ function openDayOfferPopup(dayBoxEl, day) {
       const icon = document.createElement("icon");
       icon.classList.add("fa-solid", iconElements[day - 1]);
       dayBoxEl.appendChild(icon);
-    }
+    } else if (day === today + 1) infoPromo.textContent = "";
 
     overlayPopup.removeEventListener("click", overlayClickHandler);
   }
@@ -195,7 +195,6 @@ function startApp() {
   const main = document.querySelector("main");
   infoIcon.addEventListener("click", openInfoPopup);
   writeTodayMessage(today);
-  calendar.style.display = "grid";
   main.style.display = "flex";
 }
 
