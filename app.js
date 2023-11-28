@@ -190,11 +190,15 @@ function closeStarterOverlay() {
 }
 
 function startApp() {
-  const infoIcon = document.querySelector(".fa-candy-cane");
+  const infoContainer = document.querySelector(".info-container");
   const main = document.querySelector("main");
-  infoIcon.addEventListener("click", openInfoPopup);
+  const footer = document.querySelector("footer");
+  const header = document.querySelector("header");
+  infoContainer.addEventListener("click", openInfoPopup);
   writeTodayMessage(today);
   main.style.display = "flex";
+  footer.style.display = "flex";
+  header.style.display = "block";
 }
 
 function loadApp() {
@@ -211,9 +215,6 @@ TODO:
 
 - Sistemare messaggio di benvenuto
 - Alla pressione sul pulsante, cambiare colore (onfocus?)
-- Far gestire il colore dell'svg dal css
-- Capire cosa accade al caricamento con il contenuto "sotto" che appare "sopra"
-- Sistemare flickering delle immagini
-
+- Ridimensionare le immagini
 
 */

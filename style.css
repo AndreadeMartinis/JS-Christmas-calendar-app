@@ -115,6 +115,7 @@ body::before {
 
 header {
   height: 4dvh;
+  display: none;
 
   background-color: transparent;
   color: white;
@@ -130,21 +131,17 @@ h1 {
   z-index: 1;
 }
 
-.infoIcon-container {
+.info-container {
   position: absolute;
   top: 6px;
-  left: 8px;
+  right: 8px;
   cursor: pointer;
   overflow: visible;
+  border: 1px solid #7e2a2a;
+  padding: 5px;
 }
 
-.infoIcon-container i {
-  font-size: 14px;
-  animation: growAndShrinkIcon 3s ease-in-out 5;
-  animation-delay: 5s;
-}
-
-.infoIcon-container p {
+.info-container p {
   font-size: 10px;
   letter-spacing: 1.1px;
 }
@@ -172,6 +169,7 @@ main h2 + h2 {
 }
 
 .countdown-message-container {
+  position: relative;
   width: 90%;
   background-color: rgba(254, 232, 204, 0.6);
   display: flex;
@@ -354,7 +352,7 @@ main h2 + h2 {
 /* -------------------- FOOTER -------------------- */
 
 footer {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   height: 6dvh;
@@ -402,18 +400,6 @@ footer .container-right {
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-out;
-}
-
-@keyframes growAndShrinkIcon {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .shake {
