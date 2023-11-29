@@ -1,4 +1,4 @@
-# Advent Calendar - Beauty Center
+# Advent Calendar for Smartphones - Beauty Center
 
 ## Project Description
 
