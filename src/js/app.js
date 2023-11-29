@@ -39,7 +39,7 @@ export const iconElements = [
   "fa-gifts",
 ];
 
-const today = new Date().getDate();
+export const today = new Date().getDate();
 //export const today = 5;
 const closingDays = [3, 4, 8, 9, 10, 17, 24];
 const openedBoxes = Array(24).fill(false);
