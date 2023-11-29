@@ -41,8 +41,8 @@ This project is licensed under the [your license].
 
 ## Screenshots
 
-<img src="/screenshots/screenshot1.jpeg" alt="Screenshot 1" width="300">
-<img src="/screenshots/screenshot2.jpeg" alt="Screenshot 2" width="300">
+<img src="src/img/Screenshots/Screenshot1.jpeg" alt="Screenshot 1" width="300">
+<img src="src/img/Screenshots/Screenshot1.jpegg" alt="Screenshot 2" width="300">
 
 ## Note on Responsiveness
 
