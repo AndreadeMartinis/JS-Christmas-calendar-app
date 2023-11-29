@@ -199,13 +199,13 @@ main h2 + h2 {
 .today {
   font-size: 24px;
   text-align: center;
-  background-color: rgba(54, 169, 54, 0.4);
+  background-color: rgba(5, 108, 5, 0.4);
 }
 
 .month {
   text-align: center;
   border-bottom: 1px dotted black;
-  background-color: rgba(54, 169, 54, 0.4);
+  background-color: rgba(5, 108, 5, 0.4);
 }
 
 .countdown {
