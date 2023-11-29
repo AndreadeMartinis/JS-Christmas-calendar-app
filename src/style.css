@@ -180,7 +180,8 @@ main h2 + h2 {
 }
 
 .countdown-container {
-  border: 1px solid #7e2a2a;
+  border: 1px solid white;
+  /* border: 1px solid #7e2a2a; */
   outline-offset: 3px;
   width: 20%;
 }
@@ -197,17 +198,19 @@ main h2 + h2 {
 .today {
   font-size: 24px;
   text-align: center;
+  background-color: #b37755b7;
 }
 
 .month {
   text-align: center;
   border-bottom: 1px dotted black;
+  background-color: #b37755b7;
 }
 
 .countdown {
   font-size: 16px;
   text-align: center;
-  background-color: #9a4444a5;
+  background-color: rgba(243, 231, 231, 0.826);
 }
 
 .calendar {
