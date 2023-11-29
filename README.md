@@ -29,11 +29,11 @@ We welcome contributions! Fork the project and submit a pull request.
 
 ## License
 
-This project is licensed under the [your license].
+This project is licensed under the MIT License.
 
 ## Release Notes
 
-- **Version 1.0.0** (Date): Description of changes.
+- **Version 1.0.0** (29/11/2023)
 
 ## Known Issues
 
@@ -41,7 +41,7 @@ This project is licensed under the [your license].
 
 ## Screenshots
 
-<div style="display:flex; justify-content:space-between; gap:30px;">
+<div style="display:flex; justify-content:space-between;">
     <img src="src/img/Screenshots/Screenshot1.jpeg" alt="Screenshot 1" width="300">
     <img src="src/img/Screenshots/Screenshot2.jpeg" alt="Screenshot 2" width="300" >
 </div>

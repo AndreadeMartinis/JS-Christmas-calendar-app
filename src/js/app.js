@@ -186,6 +186,9 @@ TODO:
   - Messaggio di ingaggio
   - Al click su caselle apribili future
 
-2. Alla pressione sul pulsante, cambiare colore (onfocus?) ???
+2. Aggiornare gli screenshot nel file README per la repo
+
+3. Alla pressione sul pulsante, cambiare colore (onfocus?) ???
+
 
 */
