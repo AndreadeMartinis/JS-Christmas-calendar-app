@@ -2,7 +2,7 @@
 
 ## Web address
 
-Explore the application online <a href="https://goccedibellezza-calendarioavvento.netlify.app/" target="_blank">here</a>.
+Explore the application online [here](https://goccedibellezza-calendarioavvento.netlify.app/)
 
 ## Project Description
 
@@ -33,7 +33,7 @@ We welcome contributions! Fork the project and submit a pull request.
 
 ## License
 
-This project is licensed under the <a href="https://github.com/AndreadeMartinis/JS-Christmas-calendar-app/blob/main/LICENSE" target="_blank">MIT License</a>.
+This project is licensed under the [MIT License](https://github.com/AndreadeMartinis/JS-Christmas-calendar-app/blob/main/LICENSE).
 
 ## Release Notes
 
