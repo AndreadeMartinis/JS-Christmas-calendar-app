@@ -2,7 +2,7 @@
 
 ## Web address
 
-Explore the application online [here](https://goccedibellezza-calendarioavvento.netlify.app/){:target="\_blank"}.
+Explore the application online <a href="https://goccedibellezza-calendarioavvento.netlify.app/" target="_blank">here</a>.
 
 ## Project Description
 
