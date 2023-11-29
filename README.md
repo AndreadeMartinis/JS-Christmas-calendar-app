@@ -29,7 +29,7 @@ We welcome contributions! Fork the project and submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the <a href="https://github.com/AndreadeMartinis/JS-Christmas-calendar-app/blob/main/LICENSE">MIT License</a>.
 
 ## Release Notes
 
