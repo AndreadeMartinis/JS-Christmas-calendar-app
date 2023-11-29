@@ -41,8 +41,8 @@ This project is licensed under the [your license].
 
 ## Screenshots
 
-![Screenshot 1](src/img/Screenshots/Screenshot1.jpeg)
-![Screenshot 2](src/img/Screenshots/Screenshot2.jpeg)
+![Screenshot 1](src/img/Screenshots/Screenshot1.jpeg){width=50%}
+![Screenshot 2](src/img/Screenshots/Screenshot2.jpeg){width=50%}
 
 ## Note on Responsiveness
 
