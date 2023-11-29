@@ -41,7 +41,7 @@ This project is licensed under the [your license].
 
 ## Screenshots
 
-<div style="display:flex; justify-content:space-between;">
+<div style="display:flex; justify-content:space-between; width:100%">
     <img src="src/img/Screenshots/Screenshot1.jpeg" alt="Screenshot 1" width="300" >
     <img src="src/img/Screenshots/Screenshot2.jpeg" alt="Screenshot 2" width="300" >
 </div>
