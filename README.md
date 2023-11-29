@@ -41,6 +41,9 @@ This project is licensed under the [your license].
 
 ## Screenshots
 
+![Screenshot 1](src/img/Screenshots/Screenshot1.jpeg)
+![Screenshot 2](src/img/Screenshots/Screenshot2.jpeg)
+
 ## Note on Responsiveness
 
 The application is optimized for smartphones, and while functional on desktop and tablet devices, detailed responsiveness for these platforms has not been a primary focus.
