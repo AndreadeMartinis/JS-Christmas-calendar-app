@@ -180,15 +180,12 @@ loadApp();
 
 /* 
 TODO:
-- Sistemare colori: 
+1. Sistemare colori: 
   - Header
   - Footer
   - Messaggio di ingaggio
   - Al click su caselle apribili future
 
-- Alla pressione sul pulsante, cambiare colore (onfocus?) ???
-- Ridimensionare le immagini
-
-- CIAO!!!
+2. Alla pressione sul pulsante, cambiare colore (onfocus?) ???
 
 */
