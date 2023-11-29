@@ -41,8 +41,8 @@ This project is licensed under the [your license].
 
 ## Screenshots
 
-![Screenshot 1](src/img/Screenshots/Screenshot1.jpeg){width=50%}
-![Screenshot 2](src/img/Screenshots/Screenshot2.jpeg){width=50%}
+<img src="/screenshots/screenshot1.jpeg" alt="Screenshot 1" width="300">
+<img src="/screenshots/screenshot2.jpeg" alt="Screenshot 2" width="300">
 
 ## Note on Responsiveness
 
