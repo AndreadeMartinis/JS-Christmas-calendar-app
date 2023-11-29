@@ -66,11 +66,11 @@ function createDayBox(day) {
 
   if (closingDays.includes(day)) {
     const dayoffOverlay = addOverlay(dayBoxEl, "dayBox-overlay-dayoff");
-    addBoxMessage("Oggi", "Chiuso", dayoffOverlay);
+    addBoxMessage("", "Chiuso", dayoffOverlay);
   } else if (day === today) {
     dayBoxEl.classList.add("dayBox-today-animation");
   } else if (day === today + 1) {
-    const tomorrowOverlay = addOverlay(dayBoxEl, "dayBox-overlay-dayoff");
+    const tomorrowOverlay = addOverlay(dayBoxEl, "dayBox-overlay-tomorrow");
     addBoxMessage("Offerta di", "Domani", tomorrowOverlay);
   }
 
@@ -96,18 +96,23 @@ function addPastDayElements(dayBoxEl, day) {
 function openBox(dayBoxEl, day) {
   if (day <= today + 1 && today !== 30) {
     if (!openedBoxes[day - 1]) {
-      dayBoxEl.classList.add("dayBox-flip");
+      //Se la casella non è stata ancora aperta
+      dayBoxEl.classList.add("dayBox-flip"); //Esegui l'animazione di flip
       if (!closingDays.includes(day) && day !== today + 1)
+        //Se non è un giorno di chiusura o non è domani, segna la casella come aperta
         openedBoxes[day - 1] = true;
 
       setTimeout(() => {
+        //Aspetta l'animazione e poi apri il popup
         openDayOfferPopup(dayBoxEl, day);
       }, 600);
     } else {
+      //Se la casella è stata già aperta, non eseguire l'animazione e apri il popup
       openDayOfferPopup(dayBoxEl, day);
     }
-  } else {
+  } else if (today !== 30 && !closingDays.includes(day)) {
     showFutureOfferMessage(dayBoxEl);
+  } else if (closingDays.includes(day)) {
   }
 }
 
@@ -175,8 +180,13 @@ loadApp();
 
 /* 
 TODO:
-- Sistemare colori
-- Alla pressione sul pulsante, cambiare colore (onfocus?)
+- Sistemare colori: 
+  - Header
+  - Footer
+  - Messaggio di ingaggio
+  - Al click su caselle apribili future
+
+- Alla pressione sul pulsante, cambiare colore (onfocus?) ???
 - Ridimensionare le immagini
 
 - CIAO!!!
