@@ -1,5 +1,9 @@
 # Advent Calendar for Smartphones - Beauty Center
 
+## Web address
+
+Explore the application online [here](https://goccedibellezza-calendarioavvento.netlify.app/).
+
 ## Project Description
 
 An advent calendar for a beauty center showcasing daily offers.
@@ -29,7 +33,7 @@ We welcome contributions! Fork the project and submit a pull request.
 
 ## License
 
-This project is licensed under the <a href="https://github.com/AndreadeMartinis/JS-Christmas-calendar-app/blob/main/LICENSE">MIT License</a>.
+This project is licensed under the <a href="https://github.com/AndreadeMartinis/JS-Christmas-calendar-app/blob/main/LICENSE" target="_blank">MIT License</a>.
 
 ## Release Notes
 
