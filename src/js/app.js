@@ -4,6 +4,7 @@ import { handleOpenedBox } from "./handleOpenedBox.js";
 import { loaderBarAnimation } from "./loaderBarAnimation.js";
 import { openInfoPopup } from "./openInfoPopup.js";
 import { setInfoPromoText } from "./setInfoPromoText.js";
+import { showApp } from "./showApp.js";
 import { showFutureOfferMessage } from "./showFutureOfferMessage.js";
 import { writeTodayMessage } from "./writeTodayMessage.js";
 
@@ -56,6 +57,13 @@ function createCalendar() {
     const dayBoxEl = document.querySelector(".dayBox");
     const tomorrowOverlay = addOverlay(dayBoxEl, "dayBox-overlay-dayoff");
     addBoxMessage("Offerta di", "Domani", tomorrowOverlay);
+    dayBoxEl.addEventListener("click", function () {
+      dayBoxEl.classList.add("dayBox-flip");
+      setTimeout(() => {
+        //Aspetta l'animazione e poi apri il popup
+        openDayOfferPopup(dayBoxEl, 1);
+      }, 600);
+    });
   }
 }
 
@@ -110,10 +118,12 @@ function openBox(dayBoxEl, day) {
       //Se la casella è stata già aperta, non eseguire l'animazione e apri il popup
       openDayOfferPopup(dayBoxEl, day);
     }
-  } else if (today !== 30 && !closingDays.includes(day)) {
+  } else if (!closingDays.includes(day)) {
     showFutureOfferMessage(dayBoxEl);
-  } else if (closingDays.includes(day)) {
-  }
+  } /* else if (day === 1 && today === 30) {
+    dayBoxEl.classList.add("dayBox-flip");
+    openDayOfferPopup(dayBoxEl, day);
+  } */
 }
 
 function openDayOfferPopup(dayBoxEl, day) {
@@ -136,13 +146,20 @@ function openDayOfferPopup(dayBoxEl, day) {
 
   function overlayClickHandler() {
     overlayPopup.style.display = "none";
-    if (!closingDays.includes(day) && day !== today + 1) {
+    if (!closingDays.includes(day) && day !== today + 1 && today !== 30) {
       handleOpenedBox(dayBoxEl, infoPromo, day);
-    } else if (day === today + 1) {
+    } else if (day === today + 1 || today === 30) {
       infoPromo.textContent = "";
     }
     overlayPopup.removeEventListener("click", overlayClickHandler);
   }
+}
+
+function startApp() {
+  const infoContainer = document.querySelector(".info-container");
+  infoContainer.addEventListener("click", openInfoPopup);
+  writeTodayMessage(today);
+  showApp();
 }
 
 function closeStarterOverlay() {
@@ -152,28 +169,15 @@ function closeStarterOverlay() {
   setTimeout(() => {
     body.removeChild(overlay);
   }, 600);
-  startApp();
-}
-
-function startApp() {
-  const infoContainer = document.querySelector(".info-container");
-  const main = document.querySelector("main");
-  const footer = document.querySelector("footer");
-  const header = document.querySelector("header");
-
-  infoContainer.addEventListener("click", openInfoPopup);
-  writeTodayMessage(today);
-
-  main.style.display = "flex";
-  footer.style.display = "flex";
-  header.style.display = "block";
 }
 
 function loadApp() {
   loaderBarAnimation();
-  const startButton = document.querySelector(".icon-button");
   createCalendar();
+
+  const startButton = document.querySelector(".icon-button");
   startButton.addEventListener("click", closeStarterOverlay);
+  startApp();
 }
 
 loadApp();
