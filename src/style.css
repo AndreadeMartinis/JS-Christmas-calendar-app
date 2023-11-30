@@ -31,7 +31,7 @@ body {
   background-repeat: no-repeat;
 }
 
-body::before {
+/* body::before {
   content: "";
   position: absolute;
   top: 0;
@@ -39,7 +39,7 @@ body::before {
   width: 100%;
   height: 93.7%;
   background-color: rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* -------------------- WELCOME LAYER -------------------- */
 .overlay-welcome {
